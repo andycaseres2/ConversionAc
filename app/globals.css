@@ -2,13 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  height: 100vh;
+  height: 100vh !important;
+  width: 100vw !important;
   background-color: black !important;
 }

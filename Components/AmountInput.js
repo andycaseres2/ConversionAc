@@ -22,7 +22,7 @@ const AmountInput = ({ amount, setAmount }) => {
   };
 
   return (
-    <div className="w-full lg:w-1/2 xl:w-1/3 flex flex-col gap-1 items-center">
+    <div className="w-full lg:w-1/2 xl:w-1/3 flex flex-col gap-1 items-center px-5 lg:px-0">
       <label className="text-white text-2xl font-bold">Amount:</label>
       <input
         type="text"

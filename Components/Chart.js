@@ -5,8 +5,8 @@ const dataFormatter = (number) => {
 };
 
 const Grafic = ({ data, selectedCurrency, previousDate, currentDate }) => (
-  <Card>
-    <div className="w-full flex justify-between px-10">
+  <Card className="p-0 py-4 lg:p-10">
+    <div className="w-full flex flex-col lg:flex-row justify-between px-5 lg:px-10 gap-2 lg:gap-0">
       <Title className="font-bold text-xl">
         (USD,{selectedCurrency}) Charts
       </Title>

@@ -75,21 +75,21 @@ const Conversion = () => {
   }, [selectedCurrencyFrom, selectedCurrencyTo]);
 
   return (
-    <div className="w-full xl:w-11/12 2xl:w-9/12 flex flex-col justify-start items-center shadow-2xl rounded-2xl lg:p-10 lg:mt-4 relative bg-[#515151] ">
-      <div className="w-full flex justify-center items-center pt-2 pb-2">
+    <div className="w-full xl:w-11/12 2xl:w-9/12 flex flex-col justify-start items-center shadow-2xl rounded-2xl py-4 lg:p-10 lg:mt-4 relative bg-[#515151] ">
+      <div className="w-full flex justify-center items-center pt-4 pb-2">
         <h1 className="text-4xl font-bold text-white">Conversion</h1>
       </div>
       <div className="w-full flex justify-center pt-8 lg:px-20">
         <AmountInput amount={amount} setAmount={setAmount} />
       </div>
-      <div className="w-full flex flex-col lg:flex-row justify-center px-20 py-2 lg:gap-6 xl:gap-12">
+      <div className="w-full flex flex-col lg:flex-row justify-center px-5 lg:px-20 py-2 lg:gap-6 xl:gap-12">
         <CurrencySelect
           currencies={currencies}
           text={"From"}
           setSelectedCurrency={setSelectedCurrencyFrom}
           selectValue={selectedCurrencyFrom}
         />
-        <div className="w-full lg:w-max flex justify-center items-center">
+        <div className="w-full lg:w-max flex justify-center items-center pb-2 lg:pb-0">
           <ButtonSwitch handleSwitch={handleSwitch} />
         </div>
         <CurrencySelect
@@ -112,10 +112,10 @@ const Conversion = () => {
           />
         )}
       </div>
-      <div className="w-full flex justify-between py-4 items-center px-10">
-        <div className="w-max h-max flex justify-center items-center gap-3 px-4 py-2 bg-[#686868] rounded-lg">
+      <div className="w-full flex flex-col-reverse lg:flex-row justify-between py-4 items-center px-5 lg:px-10 gap-4 lg:gap-0">
+        <div className="w-full lg:w-max h-max flex justify-center items-center gap-3 px-4 py-2 bg-[#686868] rounded-lg">
           <RiErrorWarningLine size={20} className="text-[#B7B7B7]" />
-          <p className="font-light text-[#B7B7B7] text-md">
+          <p className="font-light text-[#B7B7B7] text-xs lg:text-md">
             We use the mid-market rate for our converter. This just is for
             informational purposes.
           </p>

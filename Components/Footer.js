@@ -1,13 +1,24 @@
+import UseWindowSize from "@Utils/UseWindowSize";
 import { Socials } from "@data/data";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Footer = () => {
+const Footer = ({ setShowCharts, setShowConversion, setShowHome }) => {
+  const width = UseWindowSize();
   return (
-    <div className="w-full h-max flex justify-center items-center bg-black p-10">
+    <div className="w-full h-max flex flex-col lg:flex-row justify-center items-center bg-black px-4 lg:p-10 gap-2 pb-4">
       <div className="w-full flex justify-center items-center">
-        <p className="font-bold text-3xl text-[#00FF7F]">AWCode</p>
+        <span
+          onClick={() => {
+            setShowConversion(false);
+            setShowCharts(false);
+            setShowHome(true);
+          }}
+          className="font-bold text-3xl text-[#00FF7F] cursor"
+        >
+          AWCode
+        </span>
       </div>
       <div className="w-full flex justify-center items-center">
         <ul className="w-full flex justify-center items-center gap-6">
@@ -17,7 +28,7 @@ const Footer = () => {
                 key={index}
                 href={social.src}
                 target="__blank"
-                className="hover:text-[#00FF7F] hover:scale-105 transition-all hover:transition-all font-bold text-xl text-white"
+                className="hover:text-[#00FF7F] hover:scale-105 transition-all hover:transition-all font-bold text-base lg:text-xl text-white"
                 prefetch
               >
                 {social.text}
@@ -30,13 +41,12 @@ const Footer = () => {
         <Image
           src="/rocket.png"
           alt="AWCode"
-          width={60}
-          height={60}
+          width={width < 768 ? 40 : 60}
+          height={width < 768 ? 40 : 60}
           className=""
           loading="eager"
         />
       </div>
-      |
     </div>
   );
 };

@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="h-full bg-black w-full flex justify-between flex-col">
+        <main className="h-full bg-black w-full flex justify-between flex-col gap-16 lg:gap-0">
           <Navbar
             setShowConversion={setShowConversion}
             setShowCharts={setShowCharts}
@@ -35,7 +35,11 @@ export default function RootLayout({ children }) {
             showCharts={showCharts}
             showConversion={showConversion}
           />
-          <Footer />
+          <Footer
+            setShowConversion={setShowConversion}
+            setShowCharts={setShowCharts}
+            setShowHome={setShowHome}
+          />
         </main>
       </body>
     </html>

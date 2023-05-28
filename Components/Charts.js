@@ -80,7 +80,7 @@ const Grafics = () => {
   }, []);
 
   return (
-    <div className="w-full xl:w-11/12 2xl:w-9/12 flex flex-col justify-start items-center shadow-2xl rounded-2xl lg:p-10 lg:mt-4 relative bg-[#515151] ">
+    <div className="w-full xl:w-11/12 2xl:w-9/12 flex flex-col justify-start items-center shadow-2xl rounded-2xl lg:p-10 lg:mt-4 relative bg-[#515151] py-8">
       <div className="w-full flex justify-center items-center pt-2 pb-2">
         <h1 className="text-4xl font-bold text-white">Charts</h1>
       </div>
@@ -93,7 +93,7 @@ const Grafics = () => {
         />
       </div>
       {charts && (
-        <div className="w-full flex py-8">
+        <div className="w-full flex py-8 px-4 lg:px-0">
           <Chart
             data={newArray}
             selectedCurrency={selectedCurrency}
@@ -102,10 +102,10 @@ const Grafics = () => {
           />
         </div>
       )}
-      <div className="w-full flex justify-between items-center px-10 ">
-        <div className="w-max h-max flex justify-center items-center gap-3 px-4 py-2 bg-[#686868] rounded-lg">
+      <div className="w-full flex flex-col-reverse lg:flex-row justify-between items-center px-10 gap-4 lg:gap-0">
+        <div className="w-full lg:w-max h-max flex justify-center items-center gap-3 px-4 py-2 bg-[#686868] rounded-lg">
           <RiErrorWarningLine size={20} className="text-[#B7B7B7]" />
-          <p className="font-light text-[#B7B7B7] text-md">
+          <p className="font-light text-[#B7B7B7] text-xs lg:text-md">
             We use the mid-market rate for our chart. This just is for
             informational purposes.
           </p>
