@@ -26,6 +26,9 @@ export default function RootLayout({ children }) {
             setShowConversion={setShowConversion}
             setShowGrafics={setShowGrafics}
             setShowHome={setShowHome}
+            showHome={showHome}
+            showGrafics={showGrafics}
+            showConversion={showConversion}
           />
           <Home
             showHome={showHome}

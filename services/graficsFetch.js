@@ -1,11 +1,11 @@
-export const graficsFetch = async (currency) => {
+export const graficsFetch = async (currency, date) => {
   try {
     const res = await fetch(
-      `https://api.frankfurter.app/2020-01-01..?to=USD,${currency}`
+      `https://api.frankfurter.app/${date}..?to=USD,${currency}`
     );
     const data = res.json();
     return data;
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };

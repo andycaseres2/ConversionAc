@@ -53,7 +53,6 @@ const Conversion = () => {
       ).then(setConverterReverse);
     }
   };
-  console.log(selectedCurrencyFrom, selectedCurrencyTo);
 
   const handleSwitch = () => {
     setSelectedCurrencyFrom(selectedCurrencyTo);
@@ -76,7 +75,7 @@ const Conversion = () => {
   }, [selectedCurrencyFrom, selectedCurrencyTo]);
 
   return (
-    <div className="w-full xl:w-11/12 2xl:w-9/12 h-max lg:h-[650px] flex flex-col justify-start items-center shadow-2xl rounded-2xl lg:p-10 lg:mt-4 relative bg-[#515151] ">
+    <div className="w-full xl:w-11/12 2xl:w-9/12 flex flex-col justify-start items-center shadow-2xl rounded-2xl lg:p-10 lg:mt-4 relative bg-[#515151] ">
       <div className="w-full flex justify-center items-center pt-2 pb-2">
         <h1 className="text-4xl font-bold text-white">Conversion</h1>
       </div>
@@ -90,7 +89,7 @@ const Conversion = () => {
           setSelectedCurrency={setSelectedCurrencyFrom}
           selectValue={selectedCurrencyFrom}
         />
-        <div className="h-full w-full lg:w-max flex justify-center items-center lg:items-end lg:pb-4">
+        <div className="w-full lg:w-max flex justify-center items-center">
           <ButtonSwitch handleSwitch={handleSwitch} />
         </div>
         <CurrencySelect
@@ -100,7 +99,7 @@ const Conversion = () => {
           selectValue={selectedCurrencyTo}
         />
       </div>
-      <div className="w-full flex justify-center">
+      <div className="w-full flex justify-center py-2">
         {converter && converterReverse && (
           <Results
             amountReplace={amountReplace}
@@ -113,12 +112,12 @@ const Conversion = () => {
           />
         )}
       </div>
-      <div className="w-full flex justify-between py-4 items-center absolute bottom-2 px-20 ">
+      <div className="w-full flex justify-between py-4 items-center px-10">
         <div className="w-max h-max flex justify-center items-center gap-3 px-4 py-2 bg-[#686868] rounded-lg">
           <RiErrorWarningLine size={20} className="text-[#B7B7B7]" />
           <p className="font-light text-[#B7B7B7] text-md">
-            Usamos la tasa del mercado medio para nuestro conversor. Esto solo
-            tiene fines informativos.
+            We use the mid-market rate for our converter. This just is for
+            informational purposes.
           </p>
         </div>
         <Button action={handleConverter} text={"Converter"} />
