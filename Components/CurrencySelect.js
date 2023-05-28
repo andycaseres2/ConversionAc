@@ -22,14 +22,14 @@ function CurrencySelect({
         className="custom-select mt-1 block w-full h-14 px-4 border border-gray-500 bg-white rounded-full shadow-sm focus:outline-none focus:bg-white focus:border-gray-500 text-xl"
         onChange={handleCurrencyChange}
       >
-        <option className="text-gray-700 text-xs w-full" value="">
+        <option className="text-gray-700 text-md w-full" value="">
           Select Currency
         </option>
         {Object.entries(currencies).map(([code, name]) => (
           <option
             key={code}
             value={code}
-            className="text-gray-700 text-xs w-full"
+            className="text-gray-700 text-md w-full"
           >
             {code} - {name}
           </option>

@@ -4,7 +4,7 @@ import React from "react";
 
 const HomePage = () => {
   return (
-    <div className={`w-full flex h-full flex-col justify-start`}>
+    <div className={`w-full flex flex-col justify-start`}>
       <div className="w-9/12 flex flex-col pt-20 md:px-10 lg:px-24">
         <h1 className="text-7xl text-[#00FF7F] font-bold">{HomeData.title}</h1>
         <h2 className="text-3xl font-bold text-white">{HomeData.subTitle}</h2>

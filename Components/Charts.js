@@ -4,13 +4,13 @@ import CurrencySelect from "./CurrencySelect";
 import { currencyFetch } from "@services/currencyFetch";
 import Button from "./Button";
 import { RiErrorWarningLine } from "react-icons/ri";
-import { graficsFetch } from "@services/graficsFetch";
-import Grafic from "./Grafic";
+import { chartsFetch } from "@services/chartsFetch";
+import Chart from "./Chart";
 
 const Grafics = () => {
   const [currencies, setCurrencies] = useState([]);
   const [selectedCurrency, setselectedCurrency] = useState("");
-  const [grafics, setGrafics] = useState("");
+  const [charts, setCharts] = useState("");
   const [currentDate, setCurrentDate] = useState("");
   const [previousDate, setPreviousDate] = useState("");
 
@@ -20,7 +20,7 @@ const Grafics = () => {
 
   const handleGrafics = () => {
     if (selectedCurrency !== "") {
-      graficsFetch(selectedCurrency, previousDate).then(setGrafics);
+      chartsFetch(selectedCurrency, previousDate).then(setCharts);
     }
   };
 
@@ -46,19 +46,19 @@ const Grafics = () => {
   }, []);
 
   useEffect(() => {
-    setGrafics("");
+    setCharts("");
   }, [selectedCurrency]);
 
   const resultArr = [];
 
-  for (let date in grafics.rates) {
+  for (let date in charts.rates) {
     const formattedDate = new Date(date).toLocaleDateString("en-US", {
       month: "short",
       day: "numeric",
     });
     const entry = { date: formattedDate };
-    for (let currency in grafics.rates[date]) {
-      const value = grafics.rates[date][currency].toString();
+    for (let currency in charts.rates[date]) {
+      const value = charts.rates[date][currency].toString();
       entry[currency] = value;
     }
     resultArr.push(entry);
@@ -82,7 +82,7 @@ const Grafics = () => {
   return (
     <div className="w-full xl:w-11/12 2xl:w-9/12 flex flex-col justify-start items-center shadow-2xl rounded-2xl lg:p-10 lg:mt-4 relative bg-[#515151] ">
       <div className="w-full flex justify-center items-center pt-2 pb-2">
-        <h1 className="text-4xl font-bold text-white">Grafics</h1>
+        <h1 className="text-4xl font-bold text-white">Charts</h1>
       </div>
       <div className="w-full flex flex-col lg:flex-row justify-center px-20 py-2 lg:gap-6 xl:gap-12">
         <CurrencySelect
@@ -92,9 +92,9 @@ const Grafics = () => {
           selectValue={selectedCurrency}
         />
       </div>
-      {grafics && (
+      {charts && (
         <div className="w-full flex py-8">
-          <Grafic
+          <Chart
             data={newArray}
             selectedCurrency={selectedCurrency}
             previousDate={previousDate}
@@ -110,7 +110,7 @@ const Grafics = () => {
             informational purposes.
           </p>
         </div>
-        <Button action={handleGrafics} text={"Grafics"} />
+        <Button action={handleGrafics} text={"Charts"} />
       </div>
     </div>
   );

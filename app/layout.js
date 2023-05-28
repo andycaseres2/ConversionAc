@@ -16,23 +16,23 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   const [showConversion, setShowConversion] = useState(false);
-  const [showGrafics, setShowGrafics] = useState(false);
+  const [showCharts, setShowCharts] = useState(false);
   const [showHome, setShowHome] = useState(true);
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="bg-black">
+        <main className="h-full bg-black w-full flex justify-between flex-col">
           <Navbar
             setShowConversion={setShowConversion}
-            setShowGrafics={setShowGrafics}
+            setShowCharts={setShowCharts}
             setShowHome={setShowHome}
             showHome={showHome}
-            showGrafics={showGrafics}
+            showCharts={showCharts}
             showConversion={showConversion}
           />
           <Home
             showHome={showHome}
-            showGrafics={showGrafics}
+            showCharts={showCharts}
             showConversion={showConversion}
           />
           <Footer />

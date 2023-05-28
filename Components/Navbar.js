@@ -1,11 +1,11 @@
 import React from "react";
 
 const Navbar = ({
-  setShowGrafics,
+  setShowCharts,
   setShowConversion,
   setShowHome,
   showHome,
-  showGrafics,
+  showCharts,
   showConversion,
 }) => {
   return (
@@ -17,7 +17,7 @@ const Navbar = ({
         <li
           onClick={() => {
             setShowConversion(false);
-            setShowGrafics(false);
+            setShowCharts(false);
             setShowHome(true);
           }}
           className={`text-2xl font-bold ${
@@ -29,7 +29,7 @@ const Navbar = ({
         <li
           onClick={() => {
             setShowConversion(true);
-            setShowGrafics(false);
+            setShowCharts(false);
             setShowHome(false);
           }}
           className={`text-2xl font-bold ${
@@ -41,14 +41,14 @@ const Navbar = ({
         <li
           onClick={() => {
             setShowConversion(false);
-            setShowGrafics(true);
+            setShowCharts(true);
             setShowHome(false);
           }}
           className={`text-2xl font-bold ${
-            showGrafics ? "text-[#00FF7F]" : "text-white"
+            showCharts ? "text-[#00FF7F]" : "text-white"
           } hover:scale-105 transition-all hover:transition-all cursor-pointer`}
         >
-          Grafics
+          Charts
         </li>
       </ul>
       <div className="flex justify-center items-center gap-4">
