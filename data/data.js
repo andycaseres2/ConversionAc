@@ -12,3 +12,8 @@ export const HomeData = {
           complications with conversionAc. Discover the freedom to exchange
           coins instantly!`,
 };
+
+export const metadata = {
+  title: "ConversionAc",
+  description: "The key to hassle-free currency conversion",
+};

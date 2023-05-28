@@ -7,13 +7,9 @@ import Footer from "@Components/Footer";
 import { useState } from "react";
 import Home from "./page";
 import Head from "next/head";
+import { metadata } from "@data/data";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata = {
-  title: "ConversionAc",
-  description: "The key to hassle-free currency conversion",
-};
 
 export default function RootLayout({ children }) {
   const [showConversion, setShowConversion] = useState(false);
