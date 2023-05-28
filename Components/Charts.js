@@ -7,7 +7,7 @@ import { RiErrorWarningLine } from "react-icons/ri";
 import { chartsFetch } from "@services/chartsFetch";
 import Chart from "./Chart";
 
-const Grafics = () => {
+const Charts = () => {
   const [currencies, setCurrencies] = useState([]);
   const [selectedCurrency, setselectedCurrency] = useState("");
   const [charts, setCharts] = useState("");
@@ -84,7 +84,7 @@ const Grafics = () => {
       <div className="w-full flex justify-center items-center pt-2 pb-2">
         <h1 className="text-4xl font-bold text-white">Charts</h1>
       </div>
-      <div className="w-full flex flex-col lg:flex-row justify-center px-20 py-2 lg:gap-6 xl:gap-12">
+      <div className="w-full flex flex-col lg:flex-row justify-center px-5 lg:px-20 py-2 lg:gap-6 xl:gap-12">
         <CurrencySelect
           currencies={currencies}
           text={"Currency"}
@@ -116,4 +116,4 @@ const Grafics = () => {
   );
 };
 
-export default Grafics;
+export default Charts;
